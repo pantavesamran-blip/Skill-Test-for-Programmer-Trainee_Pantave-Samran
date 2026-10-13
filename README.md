@@ -2,7 +2,7 @@
 
 เว็บบันทึกและวิเคราะห์ค่าใช้จ่ายของบริษัท: เพิ่มรายการ ดูสรุปยอด และกรอง/เรียง/ค้นหาข้อมูลได้
 
-🔗 **เว็บเดโม:** https://github.com/pantavesamran-blip/Skill-Test-for-Programmer-Trainee_Pantave-Samran.git
+🔗 **เว็บเดโม:** https://skill-test-for-programmer-trainee-p-olive.vercel.app/
 
 > ข้อมูลทั้งหมดเป็นข้อมูลสมมติ และเว็บเดโมเปิดให้เพิ่มรายการได้โดยไม่ต้องล็อกอิน
 
