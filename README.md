@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Expense Dashboard
 
-## Getting Started
+เว็บบันทึกและวิเคราะห์ค่าใช้จ่ายของบริษัท: เพิ่มรายการ ดูสรุปยอด และกรอง/เรียง/ค้นหาข้อมูลได้
 
-First, run the development server:
+🔗 **เว็บเดโม:** https://github.com/pantavesamran-blip/Skill-Test-for-Programmer-Trainee_Pantave-Samran.git
+
+> ข้อมูลทั้งหมดเป็นข้อมูลสมมติ และเว็บเดโมเปิดให้เพิ่มรายการได้โดยไม่ต้องล็อกอิน
+
+![Dashboard](docs/dashboard.png)
+![เพิ่มรายการ](docs/add-form.png)
+
+## ฟีเจอร์
+
+- ป็อบอัพเพิ่มรายการค่าใช้จ่าย (วันที่ หมวดหมู่ รายละเอียด จำนวนเงิน) ตรวจสอบข้อมูลทั้งฝั่งเว็บ เซิร์ฟเวอร์ และฐานข้อมูล
+- การ์ดสรุป: ยอดรวม จำนวนรายการ ค่าเฉลี่ย หมวดที่ใช้จ่ายสูงสุด
+- กราฟยอดใช้จ่ายแยกตามหมวดหมู่ และรายเดือน
+- ตารางที่เรียงลำดับ ค้นหา และแบ่งหน้าได้
+- กรองตามหมวดหมู่และช่วงวันที่ (ปุ่มลัด เดือนนี้ / 30 วัน / 90 วัน) โดยการ์ดและกราฟเปลี่ยนตามตัวกรอง
+
+## เทคโนโลยีที่ใช้
+
+Next.js (App Router) · TypeScript · Tailwind CSS · Supabase (PostgreSQL) · TanStack Table · Recharts · Vercel
+
+## โครงสร้างฐานข้อมูล
+
+ดู [`supabase/schema.sql`](supabase/schema.sql) มี 2 ตาราง คือ `categories` และ `expenses` (อ้างอิงกันด้วย foreign key)
+ใช้ Row Level Security: อ่านและเพิ่มข้อมูลได้ แก้ไข/ลบไม่ได้
+
+## รันบนเครื่องตัวเอง
+
+```bash
+git clone https://github.com/pantavesamran-blip/Skill-Test-for-Programmer-Trainee_Pantave-Samran.git
+cd Skill-Test-for-Programmer-Trainee_Pantave-Samran
+npm install
+```
+
+สร้างไฟล์ `.env.local`
+
+```
+NEXT_PUBLIC_SUPABASE_URL=https://lnzbpukpcyhkvsyjskik.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_KDm86SwLXbuCbyzcFiMHEQ_gV_mHbvn
+```
+
+สร้างโปรเจกต์บน Supabase แล้วรัน SQL ใน `supabase/schema.sql` จากนั้น
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+เปิด http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## สิ่งที่อยากพัฒนาต่อ
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ระบบล็อกอิน (Supabase Auth) จำกัดสิทธิ์เพิ่มข้อมูลเฉพาะคนในบริษัท
+- แก้ไข/ลบรายการ
+- กรองและแบ่งหน้าฝั่งฐานข้อมูลเมื่อข้อมูลมีจำนวนมาก
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+จัดทำโดย นางสาว ปัณฑาวีย์ สำราญ
